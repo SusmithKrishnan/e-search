@@ -1,5 +1,5 @@
 const client = require('../configs/elastic')
 
-module.exports = async (data) => {
+module.exports = async () => {
 	await client.indices.refresh({ index: 'files' })
 }
