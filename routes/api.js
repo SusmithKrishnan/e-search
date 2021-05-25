@@ -15,10 +15,9 @@ router.get('/search', (req, res, next) => {
 		})
 });
 
-router.get('/webhook', (req, res, next) => {
+router.all('/webhook', (req, res, next) => {
 	checkUpdates()
 	res.send('ok')
-
 });
 
 module.exports = router;

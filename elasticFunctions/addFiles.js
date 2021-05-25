@@ -8,6 +8,4 @@ module.exports = async (data) => {
 		// fileName:"Addr",
 		// content: "lorem ipsum go fast "		
 	})
-	await client.indices.refresh({ index: 'files' })
-
 }
