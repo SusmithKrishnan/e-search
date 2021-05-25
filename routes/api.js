@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var search = require('../elasticFunctions/search')
+var search = require('../elasticFunctions/search');
+const checkUpdates = require('../workers/checkUpdates');
 
 router.get('/search', (req, res, next) => {
 	var searchQuery = req.query.q
@@ -15,7 +16,9 @@ router.get('/search', (req, res, next) => {
 });
 
 router.get('/webhook', (req, res, next) => {
+	checkUpdates()
 	res.send('ok')
+
 });
 
 module.exports = router;

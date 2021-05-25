@@ -106,4 +106,13 @@ body {
   width: 600px;
   margin-left: auto;
   margin-right: auto;
+  padding: 20px;
+}
+.result-item a{
+	text-decoration: none;
+	font-weight: 600;
+	color: rgb(64, 179, 224);
+}
+.result-item small{
+	color: #555;
 }
