@@ -1,4 +1,4 @@
-const client = require('../configs/elastic')
+const client = require('../clients/elastic')
 
 module.exports = async (query) => {
 	const { body } = await client.search({

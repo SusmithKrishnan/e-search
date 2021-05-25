@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var search = require('../elasticFunctions/search')
 
-/* GET users listing. */
 router.get('/search', (req, res, next) => {
 	var searchQuery = req.query.q
 	search({ match: { content: searchQuery } })
@@ -13,6 +12,10 @@ router.get('/search', (req, res, next) => {
 			console.log(e.statusCode)
 			res.status(404).json([])
 		})
+});
+
+router.get('/webhook', (req, res, next) => {
+	res.send('ok')
 });
 
 module.exports = router;

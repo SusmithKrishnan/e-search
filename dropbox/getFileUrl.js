@@ -1,5 +1,4 @@
-const dropbox = require('../configs/dropbox')
-const parseFile = require('../docParser/parseFile')
+const dropbox = require('../clients/dropbox')
 
 module.exports = (path) => {
 	return new Promise((resolve, reject) => {

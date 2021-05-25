@@ -1,13 +1,11 @@
 const dropbox = require('../clients/dropbox')
 
-module.exports = () => {
+module.exports = (cursor) => {
 	return new Promise((resolve, reject) => {
 		dropbox({
-			resource: 'files/list_folder',
+			resource: 'files/list_folder/continue',
 			parameters: {
-				path: '',
-				recursive: true,
-				include_non_downloadable_files: false
+				cursor
 			}
 		}, (err, result) => {
 			if (err) reject(err)
