@@ -31,17 +31,22 @@
           <a href="">Text search</a>
         </div> -->
       </div>
+      <div id="searchHeading"></div>
+      <div id="results" class="result"></div>
     </div>
-    <div id="results" class="result"></div>
   </body>
   <script>
     var search = (e) => {
       e.preventDefault();
       var keyword = document.getElementById("keyword").value;
       var results = document.getElementById("results");
+      var searchHeading = document.getElementById("searchHeading");
       fetch("/api/search?q=" + keyword)
         .then((response) => response.json())
         .then((data) => {
+          if (data.length) {
+            searchHeading.innerHTML = `Showing <b>${data.length}</b> result(s) for <b>"${keyword}"</b>`;
+          }
           results.innerHTML = "";
           data.forEach((element) => {
             results.innerHTML += `<div class="result-item">
