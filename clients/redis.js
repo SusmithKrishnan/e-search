@@ -1,10 +1,12 @@
 const redis = require("redis");
 const redis_url = process.env.REDIS_URL
+const logger = require('../logger');
 
+logger.info("Establishing connection to redis")
 const client = redis.createClient(redis_url);
 
 client.on("error", (error) => {
-	console.error(error);
+	logger.error("failed connection to redis", error)
 });
 
 var redisGet = (key) => {
