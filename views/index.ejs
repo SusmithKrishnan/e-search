@@ -46,7 +46,10 @@
         .then((data) => {
           if (data.length) {
             searchHeading.innerHTML = `Showing <b>${data.length}</b> result(s) for <b>"${keyword}"</b>`;
-          }
+          } else {
+						searchHeading.innerHTML = `No result for <b>"${keyword}"</b>`;
+
+					}
           results.innerHTML = "";
           data.forEach((element) => {
             results.innerHTML += `<div class="result-item">
