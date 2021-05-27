@@ -1,6 +1,7 @@
 # [RFC] Content Search Engine For Cloud Storage
 
 ## Setup
+install dependencies
 ```
 npm install
 ```
