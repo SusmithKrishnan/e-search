@@ -1,4 +1,4 @@
-# [RFC] Content Search Engine For Cloud Storage
+# Content Search Engine For Cloud Storage
 
 ## Setup
 install dependencies
@@ -24,12 +24,12 @@ sample output
 ```json
 [
 	{
-		url: "https//dropbox.com/home/fileOne.txt",
-		filename: "fileOne.txt"
+		"url": "https//dropbox.com/home/fileOne.txt",
+		"filename": "fileOne.txt"
 	},
 	{
-		url: "https//dropbox.com/home/fileTwo.txt",
-		filename: "fileTwo.pdf"
+		"url": "https//dropbox.com/home/fileTwo.txt",
+		"filename": "fileTwo.pdf"
 	},
 
 ]
