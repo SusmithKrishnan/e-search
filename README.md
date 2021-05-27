@@ -2,6 +2,10 @@
 Built on Node v16.0 
 
 ## Setup
+ubuntu specific dependencies
+```
+sudo apt install poppler-utils tesseract-ocr
+```
 install dependencies
 ```
 npm install
