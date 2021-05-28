@@ -10,17 +10,17 @@ module.exports = async (files) => {
 		if (!file.is_downloadable) return
 
 		var inDb = await search({ match: { hash: file.content_hash } })
-			.catch(e => logger.error(`Error searching in database ${file.id}`))
+			.catch(e => logger.error(`Error searching in database ${file.id} ${e}`))
 
 		if (inDb?.length) return
 
 		logger.info(`Processing file ${file.id} : ${file.name}`)
 
 		var url = await getFileUrl(file.path_lower)
-			.catch(e => logger.error(`Error fetching file url ${file.id}`))
+			.catch(e => logger.error(`Error fetching file url ${file.id} ${e}`))
 
 		var textContent = await parseFile(url)
-			.catch(e => logger.error(`Error parsing text from ${file.id}`))
+			.catch(e => logger.error(`Error parsing text from ${file.id} ${e}`))
 
 		await addFiles({
 			url: "https://dropbox.com/home" + file.path_lower,
@@ -29,10 +29,10 @@ module.exports = async (files) => {
 			content: textContent,
 			filename: file.name
 		})
-			.catch(e => logger.error(`Error adding file to elastic ${file.id}`))
+			.catch(e => logger.error(`Error adding file to elastic ${file.id} ${e}`))
 	});
 	await refreshIndex()
-		.catch(e => logger.error(`Error refreshing index`))
+		.catch(e => logger.error(`Error refreshing index ${e}`))
 }
 
 
