@@ -1,6 +1,14 @@
 # Content Search Engine For Cloud Storage
 Built on Node v16.0 
 
+## Docker Setup
+Use docker compose for quick testing 
+
+Add your dropbox API token in **docker-compose.yml** file and run:
+```
+docker-compose up
+```
+
 ## Setup
 ubuntu specific dependencies
 ```
